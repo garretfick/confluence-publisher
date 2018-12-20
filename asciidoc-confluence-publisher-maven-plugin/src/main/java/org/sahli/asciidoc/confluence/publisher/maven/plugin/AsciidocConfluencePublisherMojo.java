@@ -42,34 +42,34 @@ import java.nio.charset.Charset;
 @Mojo(name = "publish")
 public class AsciidocConfluencePublisherMojo extends AbstractMojo {
 
-    @Parameter(defaultValue = "${project.build.directory}/asciidoc-confluence-publisher", readonly = true)
+    @Parameter(defaultValue = "${project.build.directory}/asciidoc-confluence-publisher", readonly = true, property = "asciidoc.confluence.publisher.confluencePublisherBuildFolder")
     private File confluencePublisherBuildFolder;
 
-    @Parameter
+    @Parameter(property = "asciidoc.confluence.publisher.asciidocRootFolder")
     private File asciidocRootFolder;
 
-    @Parameter(defaultValue = "UTF-8")
+    @Parameter(defaultValue = "UTF-8", property = "asciidoc.confluence.publisher.sourceEncoding")
     private String sourceEncoding;
 
-    @Parameter
+    @Parameter(property = "asciidoc.confluence.publisher.rootConfluenceUrl")
     private String rootConfluenceUrl;
 
-    @Parameter(required = true)
+    @Parameter(required = true, property = "asciidoc.confluence.publisher.spaceKey")
     private String spaceKey;
 
-    @Parameter(required = true)
+    @Parameter(required = true, property = "asciidoc.confluence.publisher.ancestorId")
     private String ancestorId;
 
-    @Parameter
+    @Parameter(property = "asciidoc.confluence.publisher.username")
     private String username;
 
-    @Parameter
+    @Parameter(property = "asciidoc.confluence.publisher.password")
     private String password;
 
-    @Parameter
+    @Parameter(property = "asciidoc.confluence.publisher.pageTitlePrefix")
     private String pageTitlePrefix;
 
-    @Parameter
+    @Parameter(property = "asciidoc.confluence.publisher.pageTitleSuffix")
     private String pageTitleSuffix;
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
